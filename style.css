@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap");
+:root {
+  --blue: #01b0c0;
+  --white: #ffffff;
+  --black: #000000;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fef8f2;
+  font-family: "Roboto", sans-serif;
+  padding: 20px;
+}
+
+label {
+  cursor: pointer;
+}
+
+.meseros {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.meseros input.checkbox {
+  display: none;
+}
+
+.meseros .listaMeseros {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.meseros .listaMeseros .item {
+  border: 2px solid var(--black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+  position: relative;
+  transition: all 0.3s ease;
+  padding: 15px 10px;
+  min-height: 80px;
+  background-color: transparent;
+}
+
+.meseros .listaMeseros .item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.meseros .listaMeseros .item .check {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+}
+
+.meseros .listaMeseros .item .check i:nth-child(2) {
+  display: none;
+}
+
+.meseros .listaMeseros .item h2 {
+  margin: 0;
+  font-weight: 400;
+  color: var(--black);
+  font-size: 16px;
+  text-align: center;
+}
+
+.bx {
+  font-size: 24px;
+  color: var(--black);
+}
+
+/* Estilos cuando está seleccionado */
+input.checkbox:checked + .item {
+  background: var(--white);
+  border-color: var(--blue);
+}
+
+input.checkbox:checked + .item h2 {
+  color: var(--blue);
+  font-weight: 500;
+}
+
+input.checkbox:checked + .item .check i:nth-child(1) {
+  display: none;
+}
+
+input.checkbox:checked + .item .check i:nth-child(2) {
+  display: block;
+  color: var(--blue);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .meseros .listaMeseros {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 15px;
+  }
+
+  .meseros .listaMeseros .item h2 {
+    font-size: 14px;
+  }
+
+  .bx {
+    font-size: 20px;
+  }
+}
