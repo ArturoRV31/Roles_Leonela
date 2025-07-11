@@ -9,13 +9,27 @@
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
-    <script src="script.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </head>
   <body>
-    <p>Selecciona a los meseros que tendran Área</p>
-
     <div class="meseros">
+      <p class="instruccion">
+        Selecciona a los meseros que tendrán Área (Mínimo 5)
+      </p>
       <div class="listaMeseros"></div>
+      <div class="contenedor-botones">
+        <button id="aceptarChecksBtn" class="btn-aceptar">
+          <i class="fas fa-check-circle"></i> Aceptar Selección
+        </button>
+        <button id="borrarChecksBtn" class="btn-borrar">
+          <i class="fas fa-trash-alt"></i> Reiniciar Selección
+        </button>
+      </div>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>
